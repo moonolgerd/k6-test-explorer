@@ -1,0 +1,34 @@
+{
+	"compilerOptions": {
+		"module": "Node16",
+		"target": "ES2022",
+		"lib": [
+			"ES2022"
+		],
+		"sourceMap": true,
+		"outDir": "out",
+		"strict": true, /* enable all strict type-checking options */
+		"moduleResolution": "Node16",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"typeRoots": [
+			"./node_modules/@types",
+			"./types"
+		],
+		/* Additional Checks */
+		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
+	},
+	"include": [
+		"src/**/*",
+		"types/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"out",
+		"sample-tests"
+	]
+}

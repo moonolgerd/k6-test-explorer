@@ -1,0 +1,106 @@
+{
+  "name": "k6-test-explorer",
+  "displayName": "K6 Test Explorer",
+  "description": "Run k6 performance tests from VS Code Test Explorer",
+  "version": "0.0.6",
+  "publisher": "yourpublisher",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://scm.tpicapcloud.com/omerkulov/k6runner.git"
+  },
+  "bugs": {
+    "url": "https://scm.tpicapcloud.com/omerkulov/k6runner/-/issues"
+  },
+  "homepage": "https://scm.tpicapcloud.com/omerkulov/k6runner#readme",
+  "keywords": [
+    "k6",
+    "performance",
+    "testing",
+    "load testing",
+    "test explorer"
+  ],
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Testing"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.test.js",
+    "workspaceContains:**/*.test.ts",
+    "workspaceContains:**/*.js"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "k6-test-explorer.refreshTests",
+        "title": "Refresh K6 Tests",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "k6-test-explorer.runTest",
+        "title": "Run K6 Test",
+        "icon": "$(play)"
+      },
+      {
+        "command": "k6-test-explorer.runAllTests",
+        "title": "Run All K6 Tests",
+        "icon": "$(play-all)"
+      }
+    ],
+    "configuration": {
+      "title": "K6 Test Explorer",
+      "properties": {
+        "k6TestExplorer.k6Path": {
+          "type": "string",
+          "default": "k6",
+          "description": "Path to the k6 executable"
+        },
+        "k6TestExplorer.testPattern": {
+          "type": "string",
+          "default": "**/*{.test,-test}.{js,ts}",
+          "description": "Glob pattern to find k6 test files"
+        },
+        "k6TestExplorer.defaultArgs": {
+          "type": "array",
+          "default": [],
+          "description": "Default arguments to pass to k6 run command"
+        },
+        "k6TestExplorer.secretsFile": {
+          "type": "string",
+          "description": "Path to the secrets file for k6 tests (relative to workspace root)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/k6": "^1.0.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.3",
+    "eslint": "^9.25.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  }
+}

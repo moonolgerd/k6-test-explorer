@@ -1,0 +1,18 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": false,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"types": [
+			"k6"
+		]
+	},
+	"include": [
+		"./*.ts",
+		"./*.js"
+	],
+	"exclude": []
+}
