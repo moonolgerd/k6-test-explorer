@@ -1,18 +1,18 @@
 {
   "name": "k6-test-explorer",
-  "displayName": "K6 Test Explorer",
+  "displayName": "Grafana K6 Test Explorer",
   "description": "Run k6 performance tests from VS Code Test Explorer",
-  "version": "0.0.6",
-  "publisher": "yourpublisher",
+  "version": "0.0.7",
+  "publisher": "moonolgerdai",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://scm.tpicapcloud.com/omerkulov/k6runner.git"
+    "url": "https://github.com/moonolgerd/k6-test-explorer.git"
   },
   "bugs": {
-    "url": "https://scm.tpicapcloud.com/omerkulov/k6runner/-/issues"
+    "url": "https://github.com/moonolgerd/k6-test-explorer/-/issues"
   },
-  "homepage": "https://scm.tpicapcloud.com/omerkulov/k6runner#readme",
+  "homepage": "https://github.com/moonolgerd/k6-test-explorer#readme",
   "keywords": [
     "k6",
     "performance",

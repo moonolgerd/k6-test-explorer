@@ -351,69 +351,6 @@ The extension supports k6's file-based secret sources for secure handling of sen
 - Test results are displayed in terminal only (result parsing planned for future versions)
 - Secrets files must use key=value format (not JSON) as required by k6
 
-## Release Notes
-
-### 0.0.6
-
-Enhanced TypeScript arrow function support and Docker integration:
-
-- **Arrow Function Support**: Added comprehensive support for TypeScript arrow function syntax
-  - Supports typed parameters and complex return type annotations
-  - Works with async arrow functions and various TypeScript type declarations
-- **Docker Integration**: Added complete Docker support with cross-platform configurations
-  - Windows (PowerShell) and macOS/Linux specific Docker configurations
-  - Automatic workspace mounting and secrets file support
-  - Easy installation via `docker pull grafana/k6:latest`
-
-### 0.0.5
-
-Test discovery improvements and naming convention fixes:
-
-- **Expanded File Pattern Support**: Updated test pattern to include `-test.ts` and `-test.js` naming conventions
-- **Fixed Test Recognition**: Resolved issue where files named with `-test` suffix (e.g., `secrets-test.ts`) were not being discovered
-- **Updated Default Pattern**: Changed default test pattern from `**/*.test.{js,ts}` to `**/*{.test,-test}.{js,ts}`
-- **Better Documentation**: Updated README with comprehensive test file naming conventions
-
-### 0.0.4
-
-Enhanced test discovery and async function support:
-
-- **Improved Test Discovery**: Enhanced regex patterns to properly detect async functions and complex TypeScript return types
-- **Better Function Detection**: Fixed detection of `export default async function ()` patterns used in modern k6 tests
-- **Eliminated Duplicates**: Resolved duplicate function detection for lifecycle functions (setup, teardown, handleSummary)
-- **TypeScript Support**: Enhanced support for complex return type annotations including `Promise<void>` and union types
-- **Sample Test Updates**: All sample tests now properly detected by the test explorer
-
-### 0.0.3
-
-Major improvements to TypeScript support and secrets management:
-
-- **Removed --compatibility flag**: TypeScript tests now run without experimental compatibility mode
-- **Secrets Management**: Added support for k6's file-based secret sources
-  - Configure secrets file path via `k6TestExplorer.secretsFile` setting
-  - Use key=value format for secrets files (k6 standard)
-  - Async `secrets.get()` API support with proper TypeScript definitions
-- **Enhanced TypeScript Support**: Improved module resolution and async function handling
-- **Updated Sample Tests**: Added secrets usage examples and comprehensive documentation
-- **Bug Fixes**: Fixed k6 argument formatting and import syntax issues
-
-### 0.0.2
-
-Added TypeScript support:
-
-- TypeScript test files are now supported with the `.test.ts` extension
-- Improved type safety and editor support for TypeScript users
-
-### 0.0.1
-
-Initial release of K6 Test Explorer:
-
-- Basic test discovery for k6 JavaScript files
-- Integration with VS Code Test Explorer
-- Run individual tests and all tests
-- Configurable k6 path and test patterns
-- Real-time output in integrated terminal
-
 ---
 
 ## Development
@@ -428,6 +365,6 @@ To contribute to this extension:
 
 ## Support
 
-For issues and feature requests, please visit the [GitHub repository](https://github.com/your-username/k6-test-explorer).
+For issues and feature requests, please visit the [GitHub repository](https://github.com/moonolgerd/k6-test-explorer).
 
 **Enjoy testing with k6!**
